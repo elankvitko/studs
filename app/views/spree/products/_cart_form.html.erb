@@ -32,7 +32,7 @@
     <% if @product.price_in(current_currency) && !@product.price.nil? %>
       <div data-hook="product_price" class="col-md-6">
         <div id="product-price">
-          <% if @product.master.volume_prices.present? %>
+          <% if @product.master.volume_prices.present? || !@product.master.volume_price_models.empty? %>
             <%= render partial: 'spree/products/volume_pricing', locals: { product: @product } %>
           <% else %>
             <h6 class="product-section-title"><%= Spree.t(:price) %></h6>
