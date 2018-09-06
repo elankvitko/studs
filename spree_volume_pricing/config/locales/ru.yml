@@ -1,0 +1,18 @@
+---
+ru:
+  spree:
+    add_volume_price: Добавить цену в зависимости от количества
+    position: Позиция в списке
+    discount_type:
+    range: Диапазон
+    volume_prices: Цены в зависимости от количества
+    volume_pricing: Цена в зависимости от количества
+    price_discount:
+    percent_discount:
+    bulk_discount:
+  activerecord:
+    errors:
+      messages:
+        could_not_conver_to_range:
+        is_not_a_valid_volume_price_type:
+        must_be_in_format:

@@ -1,0 +1,25 @@
+<% display_percent = false %>
+<% if product.price > 0 and product.master.volume_prices.present? %>
+  <div id="bulk-discount">
+    <h6><%= Spree.t(:volume_pricing) %></h6>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+    	<% product.master.volume_prices.each do |v| %>
+        <% display_percent = true if v.discount_type == "percent" %>
+      	<%= content_tag(:tr) do %>
+        	<%= content_tag :td, (v.open_ended? ? v.range : "#{v.range.to_range.begin}–#{v.range.to_range.end}") %>
+          <% if display_percent %>
+            <%= content_tag :td, Spree::Money.new(((100 - v.amount) / 100) * product.master.price).to_s %>
+          <% else %>
+            <%= content_tag :td, Spree::Money.new(v.amount).to_s %>
+          <% end %>
+        <% end %>
+    	<% end %>
+    </table>
+  </div>
+<% end %>

@@ -1,0 +1,18 @@
+---
+pt:
+  spree:
+    add_volume_price: Adicionar Preço Volume
+    position: Posição
+    discount_type: Tipo Desconto
+    range: Intervalo
+    volume_prices: Preços Volume
+    volume_pricing: Preçário Volume
+    price_discount: Desconto no Preço
+    percent_discount: Desconto em Percentagem
+    bulk_discount: Desconto por Quantidade
+  activerecord:
+    errors:
+      messages:
+        could_not_conver_to_range:
+        is_not_a_valid_volume_price_type:
+        must_be_in_format:
